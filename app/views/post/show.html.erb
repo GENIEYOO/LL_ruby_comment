@@ -1,0 +1,20 @@
+<h1>게시물보기</h1>
+
+
+<p>제목 :<%=@post.title %></p>
+<p>내용 :<%=@post.content %></p>
+
+<!-- @post  #포스트의 주소값이 나온다.%> -->
+
+<form action = "/post/createcomment/<%=@post.id%>">
+    
+    <input type="text" name="content">
+    <input type="submit" name="댓글쓰기">
+</form>
+
+<% @post.comments.each do |c| %>
+<!--오늘의 핵!!!!!! post안에 comment가 있으므로 post안에 comments안에 --
+where 안해도 관계형 디비-->
+<p><%= c.content %></p>
+
+<% end %>

@@ -1,0 +1,8 @@
+<h1>게시글작성</h1>
+
+<% @posts.each do |post| %>
+<p><%=post.id %>번째 글 : <%=post.title %><a href="/post/show/<%=post.id %>">[보기]</a></p>
+<!--post show로 보내줘야 하는데 글아이디와 함꼐-->
+
+<% end %>
+<a href = "/post/new"> 작성하기</a>
