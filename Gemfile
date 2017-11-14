@@ -47,6 +47,6 @@ group :development do
   gem 'rails_db'
   gem 'pry-rails'
   
-  
+  gem 'faker'
 end
 

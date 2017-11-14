@@ -12,7 +12,9 @@ class PostController < ApplicationController
     Post.create(
       
       title: params[:title],
-      content: params[:content]
+      content: params[:content],
+      user_id: session[:user_id]
+      
       )
       redirect_to '/'
  #디비에 넣기

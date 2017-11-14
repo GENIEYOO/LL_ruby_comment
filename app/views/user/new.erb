@@ -1,0 +1,17 @@
+<h1>회원가입</h1>
+
+
+ 
+ <%=form_tag("/user/create", method: "post") do %>
+ <%=label_tag(:email, "이메일 :") %>
+ <%=text_field_tag(:email) %>
+ <br>
+<%=label_tag(:password, "비밀번호") %>
+<%=text_field_tag(:password) %>
+ <br>
+ 
+ <%=submit_tag("제출") %>
+
+    
+    
+<% end %>

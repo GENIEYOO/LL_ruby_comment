@@ -40,6 +40,60 @@
     
 
 
+# 20171113
+#post method - token: 띄어쓰기도 비번이 될 수 있다. 
+#렌더링의 개념 : 페이지 끌어다 쓰는 것.
 
+ 1. 오늘 잡은 에러.
+ 
+- DB에러 
+ : Post.user.email RDBMS에서 관계찾아서 할 때는 데이터테이블에 비어있는게 있으면 안된다.
+ post도 있고 유저도 있고 이메일도 있어야 하는데 그렇지 않아서 계속 꼬이는 에러
+ : 가운데 스크롤 누르면 탭다지워짐: 그 자리에서 가운데 계속 누른다.
+ : fake db 만들기- gem faker : seed에 삽입테이블 만든다.
+
+- 개발할 때 웹페이지 모양은 F12에서 끝에 버튼 누르고 DIV 영역을 클릭해 가면서 하면 됩니다.
+
+ Validation
+ 
+ 프론트엔드 validation
+ 백엔드 서버validation
+ 
+ 이메일 입력하면 이메일인지 확인
+ 
+ 푸터는 yield 밑에 입력한다.
+ 
+ #
+ bootstrap
+ _파일명 적어서 
+ 
+ ==은 if 문에서 bolean 값 오늘의 핵은 로그인 프로세스!!!
+ 
+ 
+ #플래시라는 해쉬안에 flash{
+     
+     notice => "안내"
+     alert => "경고"
+     
+ }
+ 
+ def login_process
+ 
+ @user = User.find_by(email: params[:email])
+ if @user 
+   if @user.password == params[:password]
+      session[:user_id] = @user.id
+      flash[:notice] = "로그인이 되었습니다."
+      redirect_to '/'
+    else 
+     flash[:alert] = "비밀번호가 틀렸습니다."
+     redirect_to '/user/login'     
+   end 
+ else
+  flash[:alert] = "그런 이메일의 유저가 없다."
+  redirect_to '/user/new'
+    end
+end
+ 
 
 

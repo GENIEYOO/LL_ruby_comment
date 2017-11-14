@@ -1,17 +1,40 @@
 Rails.application.routes.draw do
   
+  resources :blogs
+  resources :tweets
+  get 'user/login'
+
+  get 'user/logout'
+
   root 'post#index'
   
   get 'post/index'
 
   get 'post/new'
 
-  get 'post/create'
+  post 'post/create'
 
   get 'post/show/:id' => 'post#show'
 
   get 'post/createcomment/:id' => 'post#createcomment'
+  
+  get 'user/login'
+  
+  get 'user/login_process'
+  
+  get 'user/new'
+  
+  get 'user/show'
+  
+  get 'user/index'
+  
+  get 'user/login'
+  
+  post 'user/login_process'
+  
+  post 'user/create'
 
+  get 'user/note'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
