@@ -94,6 +94,8 @@
   redirect_to '/user/new'
     end
 end
+
+#scaffoding 배웠음.
  
 
 

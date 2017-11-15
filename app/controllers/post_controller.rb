@@ -1,4 +1,7 @@
 class PostController < ApplicationController
+  
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+  
   def index #게시글 다 보여주는 페이지
   
     @posts=Post.all
@@ -21,7 +24,6 @@ class PostController < ApplicationController
   end
 
   def show #1개의 게시글 보는 페이지
-   @post = Post.find(params[:id])
   # @comments =  Comment.where(post_id: params[:id]) 모델링 안 했을 때
   end
 
@@ -32,5 +34,35 @@ class PostController < ApplicationController
       )
       redirect_to :back
   
+  end
+  
+  
+  def edit
+    # render :nothing => true
+    
+  end
+  
+  def update
+   
+    
+    @post.update(
+      
+      title: params[:title], 
+      content: params[:content]
+      )
+      
+      redirect_to "/post/show/#{@post.id}"
+  
+  end
+  
+  
+ def destroy
+   @post.destroy
+   redirect_to '/'
+ end
+  
+  private
+  def find_post
+    @post = Post.find(params[:id])
   end
 end

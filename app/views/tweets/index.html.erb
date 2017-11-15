@@ -1,0 +1,16 @@
+<h1>트위터 목록</h1>
+
+<% @tweets.each do |t| %>
+
+<!-- 로직만 들어있어서 출력하지 않도록 한다.-->
+
+<p><%=t.content%><a href ="/tweets/<%= t.id %>/edit">[수정] </a>
+
+<%= link_to("[삭제]", "/tweets/#{ t.id }", method: "delete") %>
+</p>
+
+<% end %>
+<a href = "/tweets/new">새로운 트윗 만들기</a>
+
+
+

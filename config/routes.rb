@@ -1,20 +1,50 @@
 Rails.application.routes.draw do
   
-  resources :blogs
+  
+  root 'tweets#index'
   resources :tweets
+  # get 'tweets/edit/:id' => 'tweets#edit'
+  
+  # put 'tweets/update/:id' => 'tweets#update'
+  
+  # delete 'tweets/:id' => 'tweets#destroy'
+  
+  # # get 'tweets/:id/destroy' => 'tweets#destroy'
+  
+  # get 'tweets/index'
+
+  # get 'tweets/new'
+
+  # get 'tweets', to: 'tweets#index'
+  
+  
+  # post 'tweets', to: 'tweets#create' 
+  
+  # get 'tweets/create'
+
+  # get 'tweets/edit'
+
+  # get 'tweets/:id/edit' => 'tweets#edit'
+
+  # get 'tweets/destroy'
+
+  resources :blogs
+  # resources :tweets
   get 'user/login'
 
   get 'user/logout'
-
-  root 'post#index'
   
-  get 'post/index'
+  
+  
+  post 'post/index'
 
   get 'post/new'
 
   post 'post/create'
 
   get 'post/show/:id' => 'post#show'
+  
+  get 'post/edit/:id' => 'post#edit'
 
   get 'post/createcomment/:id' => 'post#createcomment'
   
@@ -30,11 +60,21 @@ Rails.application.routes.draw do
   
   get 'user/login'
   
+  get 'post/destroy'
+  
   post 'user/login_process'
   
   post 'user/create'
 
   get 'user/note'
+  
+  get 'post/edit'
+  
+  put 'post/update/:id' => 'post#update'
+  
+  get 'post/destroy/:id' => 'post#destroy'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

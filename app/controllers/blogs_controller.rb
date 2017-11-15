@@ -18,6 +18,7 @@ class BlogsController < ApplicationController
   end
 
   # GET /blogs/1/edit
+  # 우리꺼 : /tweets/1/edit
   def edit
   end
 
@@ -50,6 +51,10 @@ class BlogsController < ApplicationController
       end
     end
   end
+  
+  
+  
+  
 
   # DELETE /blogs/1
   # DELETE /blogs/1.json

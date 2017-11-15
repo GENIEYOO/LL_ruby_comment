@@ -6,6 +6,13 @@
 
 <!-- @post  #포스트의 주소값이 나온다.%> -->
 
+<a href="/post/edit/<%= @post.id%>">수정</a>
+<a href="/post/delete/<%= @post.id%>">삭제</a>
+
+
+
+
+
 <form action = "/post/createcomment/<%=@post.id%>">
     
     <input type="text" name="content">
